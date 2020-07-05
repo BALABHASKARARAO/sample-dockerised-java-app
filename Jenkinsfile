@@ -19,7 +19,7 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'ecr:ap-southeast-1:aws-credentials', url: 'https://633799498526.dkr.ecr.ap-southeast-1.amazonaws.com/kalbe-dev') {
+                    withDockerRegistry(credentialsId: 'ecr:us-west-2:aws-credentials', url: 'https://426281568042.dkr.ecr.us-west-2.amazonaws.com/nginx') {
                         app.push("${env.BUILD_NUMBER}")
                         app.push("latest")
                     }
